@@ -1,0 +1,138 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@100&display=swap');
+
+:root {
+  --primary-color: #165C7D;
+  --secondary-color: #FFA300;
+  --complementary-color2: #009ED0;
+  --complementary-color2: #00C246;
+  --complementary-color3: #007D8A;
+  --critical-scale1: rgb(193, 48, 24);
+  --critical-scale2: #FFA300;
+  --critical-scale3: #FCD610;
+  --critical-scale4: #00C246;
+  --critical-scale5: #009ED0;
+  --gray-scale1: #040F14;
+  --gray-scale2: #889499;
+  --gray-scale3: #A7B0B5;
+  --gray-scale4: #C6CED1;
+  --gray-scale5: #C6CED1;
+  --gray-scale6: #E7EEF1;
+  --tonal-variations1: #012F44;
+  --tonal-variations2: #013F5C;
+  --tonal-variations3: #165C7D;
+  --tonal-variations4: #457D97;
+  --tonal-variations5: #739DB1;
+  --tonal-variations6: #A2BECB;
+  --tonal-variations7: #D0DEE5;
+  --tonal-variations8: rgb(195, 125, 0);
+  --tonal-variations9: #FFA300;
+  --tonal-variations10: #FFB533;
+  --tonal-variations11: #FFC866;
+  --tonal-variations12: #FFDA99;
+  --tonal-variations13: #FFEDCC;
+  --background: #E8EFF2;
+
+}
+
+/* Path: src\styles.css */
+** {
+  font-family: Roboto, Open Sans, sans-serif;
+
+}
+
+.bg-color-primary {
+  background-color: var(--background);
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}

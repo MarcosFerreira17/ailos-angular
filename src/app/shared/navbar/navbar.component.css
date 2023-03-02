@@ -1,0 +1,22 @@
+header {
+  position: relative;
+  margin-left: 6rem;
+}
+
+.page-title {
+  font-variant: uppercase !important;
+  font-weight: bold;
+}
+
+.breadcrumb-header {
+  background-color: #f5f5f5;
+  margin-left: 7rem;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.breadcrumb-item {
+  font-size: 14px;
+  color: var(--gray-scale3);
+}
