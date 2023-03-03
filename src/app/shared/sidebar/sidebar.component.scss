@@ -13,18 +13,21 @@ nav {
   margin: 0;
 }
 
-.sidebar-item {
+.sidebar-item, a {
   font-size: 25px;
-  margin-top: 30px;
-  margin-right: 30px;
-  margin-left: 15px;
+  margin-top: 15px;
   color: rgb(255, 255, 255);
 }
 
 .brand-icon {
   width: 50px;
   height: 50px;
-  margin-right: 3rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.list-hamburguer{
+  color: var(--gray-scale4);
 }
 
 
