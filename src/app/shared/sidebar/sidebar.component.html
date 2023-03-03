@@ -1,8 +1,8 @@
-<nav class="navbar d-flex flex-column flex-shrink-0">
-  <div class="">
+<nav class="navbar d-inline-flex flex-column flex-shrink-0">
+  <div>
     <a
       href="/"
-      class="d-block p-3 link-white text-decoration-none"
+      class="d-block p-3 link-white text-decoration-none brand-icon"
       data-bs-toggle="tooltip"
       data-bs-placement="right"
       data-bs-original-title="Icon-only"
@@ -119,71 +119,76 @@
         />
       </svg>
     </a>
-    <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-      <li class="nav-item">
+    <ul class="sidebar-ul nav nav-pills nav-flush flex-column text-center">
+      <li class="sidebar-item nav-item">
         <i
-          class="bi bi-list"
+          class="list-hamburguer bi bi-list"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasNavbar"
           aria-controls="offcanvasNavbar"
         ></i>
       </li>
-      <li>
-        <a
-          href="#"
-          class="nav-link py-3 rounded-0"
-          data-bs-toggle="tooltip"
-          data-bs-placement="right"
-          aria-label="Search"
-          data-bs-original-title="Search"
-          ><i class="bi bi-search"></i>
-        </a>
+      <li class="sidebar-item nav-item">
+        <i class="bi bi-search"
+          ><a
+            href="#"
+            class="nav-link py-3 rounded-0"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            aria-label="Search"
+            data-bs-original-title="Search"
+          >
+          </a
+        ></i>
       </li>
-      <li>
-        <a
-          href="#"
-          class="nav-link py-3 rounded-0"
-          data-bs-toggle="tooltip"
-          data-bs-placement="right"
-          aria-label="Favoritos"
-          data-bs-original-title="Favoritos"
-        >
-          <i class="bi bi-star"></i>
-        </a>
+      <li class="sidebar-item nav-item">
+        <i class="bi bi-star"
+          ><a
+            href="#"
+            class="nav-link py-3 rounded-0"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            aria-label="Favoritos"
+            data-bs-original-title="Favoritos"
+          >
+          </a
+        ></i>
       </li>
-      <li>
-        <a
-          href="#"
-          class="nav-link py-3 rounded-0"
-          data-bs-toggle="tooltip"
-          data-bs-placement="right"
-          aria-label="Cadastro"
-          data-bs-original-title="Cadastro"
-        >
-          <i class="bi bi-sliders"></i>
-        </a>
+      <li class="sidebar-item nav-item">
+        <i class="bi bi-sliders">
+          <a
+            href="#"
+            class="nav-link py-3 rounded-0"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            aria-label="Cadastro"
+            data-bs-original-title="Cadastro"
+          >
+          </a
+        ></i>
       </li>
-      <li>
-        <a
-          href="#"
-          class="nav-link py-3 rounded-0"
-          data-bs-toggle="tooltip"
-          data-bs-placement="right"
-          aria-label="Demais telas"
-          data-bs-original-title="Demais telas"
-        >
-          <i class="bi bi-bank"></i>
-        </a>
+      <li class="sidebar-item nav-item">
+        <i class="bi bi-bank">
+          <a
+            href="#"
+            class="nav-link py-3 rounded-0"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            aria-label="Demais telas"
+            data-bs-original-title="Demais telas"
+          >
+          </a>
+        </i>
       </li>
     </ul>
     <div
-      class="offcanvas offcanvas-start"
+      class="offcanvas offcanvas-start colapse-menu"
       tabindex="-1"
       id="offcanvasNavbar"
       aria-labelledby="offcanvasNavbarLabel"
     >
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+        <h5 id="offcanvasNavbarLabel">
           <a
             href="/"
             class="d-block p-3 link-dark text-decoration-none"
@@ -201,39 +206,39 @@
         </h5>
       </div>
       <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <ul class="navbar-nav justify-content-end flex-grow-1">
           <ul class="nav nav-pills nav-flush flex-column">
-            <li class="nav-item">
+            <li class="nav-item offcanvas-item">
               <i
-                class="bi bi-list list-hamburguer"
+                class="bi bi-list list-hamburguer-offcanvas"
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar"
               ></i>
             </li>
-            <li>
-              <a
-                href="#"
-                class="nav-link"
-                data-bs-toggle="tooltip"
-                data-bs-placement="right"
-                aria-label="Search"
-                data-bs-original-title="Search"
-              >
-                <form class="d-flex mt-3" role="search">
-                  <button class="btn" type="submit">
-                    <i class="bi bi-search"></i>
-                  </button>
-                  <input
-                    class="form-control"
-                    type="search"
-                    placeholder="Buscar item"
+            <li class="nav-item offcanvas-item">
+              <form class="d-inline-flex" role="search">
+                <i class="bi bi-search submit-search"
+                  ><a
+                    href="#"
+                    class="nav-link"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
                     aria-label="Search"
-                  />
-                </form>
-              </a>
+                    data-bs-original-title="Search"
+                  >
+                  </a
+                ></i>
+
+                <input
+                  class="form-control"
+                  type="search"
+                  placeholder="Buscar item"
+                  aria-label="Search"
+                />
+              </form>
             </li>
-            <li>
+            <li class="nav-item offcanvas-item">
               <a
                 href="#"
                 class="nav-link py-3 rounded-0"
@@ -245,7 +250,7 @@
                 <span class="link-description">Tela Inicial</span>
               </a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item offcanvas-item">
               <a
                 href="#"
                 class="nav-link py-3 rounded-0 dropdown-toggle"
@@ -272,7 +277,7 @@
                 <li><a class="dropdown-item" href="#">Item 10</a></li>
               </ul>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item offcanvas-item">
               <a
                 href="#"
                 class="nav-link py-3 rounded-0 dropdown-toggle"
@@ -299,7 +304,7 @@
                 <li><a class="dropdown-item" href="#">Item 10</a></li>
               </ul>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item offcanvas-item">
               <a
                 href="#"
                 class="nav-link py-3 rounded-0 dropdown-toggle"

@@ -1,3 +1,143 @@
 <div class="main-content">
-  <h1>home</h1>
+  <h2 class="title">Informe o CPF do futuro cooperado (a)</h2>
+  <p class="description">
+    se necessário, você poderá duplicar uma conta existente ou pausar e retornar
+    este cadastro futuramente.
+  </p>
+  <p class="description">Digite apenas os números (sem ponto e virgula)</p>
+  <div class="search-cpf row">
+    <label for="basic-url" class="form-label">CPF</label>
+    <div class="input-group">
+      <input type="text" class="input-search" placeholder="000.000.000-00" />
+      <button class="btn btn-search">Consultar por CPF</button>
+    </div>
+  </div>
 </div>
+<footer>
+  <div class="container-fluid d-flex">
+    <button
+      class="btn btn-primary"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasWithBothOptions"
+      aria-controls="offcanvasWithBothOptions"
+      class="btn-tips btn-lg"
+    >
+      Dicas para abertura de conta
+    </button>
+
+    <div
+      class="offcanvas offcanvas-end"
+      data-bs-scroll="false"
+      tabindex="-1"
+      id="offcanvasWithBothOptions"
+      aria-labelledby="offcanvasWithBothOptionsLabel"
+    >
+      <div class="offcanvas-header mt-5">
+        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+          Check-list para abertura da conta
+        </h5>
+      </div>
+      <div class="offcanvas-body">
+        <p class="offcanvas-description">
+          Confira algumas dicas que irão lhe ajudar neste atendiment para que a
+          admissão aconteça da melhor forma possível
+        </p>
+
+        <div class="form-check mt-3">
+          <li class="list-group-item">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="firstCheckbox"
+              (click)="isCollapsedFirstInput = !isCollapsedFirstInput"
+              [attr.aria-expanded]="!isCollapsedFirstInput"
+              aria-controls="collapseBasic"
+            />
+            <label class="form-check-label" id="firstCheckbox">
+              Conheça seu cooperado
+            </label>
+          </li>
+          <ul
+            class="nav-item justify-content-around"
+            id="collapseBasic"
+            [collapse]="isCollapsedFirstInput"
+            [isAnimated]="true"
+          >
+            <li class="nav-link">O que traz você até a cooperativa?</li>
+            <li class="nav-link">O que é mais importante na sua vida?</li>
+            <li class="nav-link">Você tem algum sonho?</li>
+          </ul>
+        </div>
+        <div class="form-check">
+          <li class="list-group-item">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="secondCheckbox"
+              (click)="isCollapsedSecondInput = !isCollapsedSecondInput"
+              [attr.aria-expanded]="!isCollapsedSecondInput"
+              aria-controls="collapseBasic"
+            />
+            <label class="form-check-label" id="secondCheckbox">
+              Fale sobre a Cooperativa
+            </label>
+          </li>
+          <ul
+            class="nav-item justify-content-around"
+            id="collapseBasic"
+            [collapse]="isCollapsedSecondInput"
+            [isAnimated]="true"
+          >
+            <li class="nav-link">
+              Modelo de Negócio: direito a voto, transpaência na gestão,
+              PROGRID, retorno das sobreas, taxas atrativas;
+            </li>
+            <li class="nav-link">
+              Rde de Atendimento: App, Conta Online, SAC, Cixas Eletrônicos
+              (compartilhados entre as cooperativas), Postos de atendimento
+            </li>
+          </ul>
+        </div>
+        <div class="form-check">
+          <li class="list-group-item">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="thirdCheckbox"
+              (click)="isCollapsedThirdInput = !isCollapsedThirdInput"
+              [attr.aria-expanded]="!isCollapsedThirdInput"
+              aria-controls="collapseBasic"
+            />
+            <label class="form-check-label" for="thirdCheckbox">
+              Documentos e comprovações necessárias
+            </label>
+          </li>
+          <ul
+            class="nav-item justify-content-around"
+            id="collapseBasic"
+            [collapse]="isCollapsedThirdInput"
+            [isAnimated]="true"
+          >
+            <li class="nav-link">CPF regular na Receita Federal;</li>
+            <li class="nav-link">
+              Documento de Identificação(RG, CNH, Carteira de Trabalho, RNM,
+              Carteira Profissional, Passaporte Brasileiro);
+            </li>
+            <li class="nav-link">Comprovante de endereço;</li>
+            <li class="nav-link">Comprovante de renda.</li>
+          </ul>
+        </div>
+        <button
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasWithBothOptions"
+          aria-controls="offcanvasWithBothOptions"
+          class="btn-tips btn-lg"
+        >
+          Continuar atendimento
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>

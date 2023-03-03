@@ -1,8 +1,0 @@
-.main-content {
-  position: absolute;
-  width: 93%;
-  height: 100vh;
-  margin-top: 10rem;
-  align-items: stretch;
-  background-color: var(--gray-scale2);
-}
