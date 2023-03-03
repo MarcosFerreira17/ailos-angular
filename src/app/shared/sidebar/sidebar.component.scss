@@ -1,22 +1,32 @@
 nav {
   background-color: var(--primary-color);
   width: 85px;
-  padding-left: 15px;
   height: 100vh;
   font-family: 'Open Sans';
 }
 // Sidebar
 .sidebar-ul{
-  width: 30px;
+  display: inline-flex;
+  width: 80px;
   height: 80vh;
-  padding: 0;
   margin: 0;
+  padding: 0;
+}
+
+.sidebar-ul :hover{
+  color: var(--secondary-color);
+  transition: 1s;
 }
 
 .sidebar-item, a {
   font-size: 25px;
   margin-top: 15px;
   color: rgb(255, 255, 255);
+}
+
+.sidebar-item a :hover{
+  color: var(--secondary-color);
+  transition: 1s;
 }
 
 .brand-icon {
@@ -27,6 +37,7 @@ nav {
 }
 
 .list-hamburguer{
+  cursor: pointer;
   color: var(--gray-scale4);
 }
 
