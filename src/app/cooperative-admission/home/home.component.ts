@@ -9,4 +9,5 @@ export class HomeComponent {
   isCollapsedFirstInput = true;
   isCollapsedSecondInput = true;
   isCollapsedThirdInput = true;
+  queryCPF = true;
 }

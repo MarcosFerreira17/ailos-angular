@@ -1,4 +1,53 @@
 <div class="main-content">
+  <div class="container">
+    <div class="steps">
+      <progress id="progress" value="0" max="100"></progress>
+      <div class="step-item">
+        <button
+          class="step-button text-center"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseOne"
+          aria-expanded="true"
+          aria-controls="collapseOne"
+        ></button>
+        <div class="step-title">Início</div>
+      </div>
+      <div class="step-item">
+        <button
+          class="step-button text-center collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseTwo"
+          aria-expanded="false"
+          aria-controls="collapseTwo"
+        ></button>
+        <div class="step-title">Documentos</div>
+      </div>
+      <div class="step-item">
+        <button
+          class="step-button text-center collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseThree"
+          aria-expanded="false"
+          aria-controls="collapseThree"
+        ></button>
+        <div class="step-title">Dados cadastrais</div>
+      </div>
+      <div class="step-item">
+        <button
+          class="step-button text-center collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseThree"
+          aria-expanded="false"
+          aria-controls="collapseThree"
+        ></button>
+        <div class="step-title">Admissão</div>
+      </div>
+    </div>
+  </div>
   <h2 class="title">Informe o CPF do futuro cooperado (a)</h2>
   <p class="description">
     se necessário, você poderá duplicar uma conta existente ou pausar e retornar
@@ -10,6 +59,16 @@
     <div class="input-group">
       <input type="text" class="input-search" placeholder="000.000.000-00" />
       <button class="btn btn-search">Consultar por CPF</button>
+    </div>
+  </div>
+  <div class="card" *ngIf="queryCPF == !queryCPF">
+    <div class="card-body">
+      <h5 class="card-title">Situação cadastral do CPF</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Cosulta na Receita Federal</h6>
+      <label class="card-label" for="">Nome</label>
+      <p>{{ queryCPF }}</p>
+      <label class="card-label" for="">CPF</label>
+      <p>{{ queryCPF }}</p>
     </div>
   </div>
 </div>
