@@ -1,6 +1,6 @@
 
 .main-content {
-  height: 82vh;
+  height: 73vh;
   margin-top: 10px;
   background-color: var(--background);
   font-family: 'Open Sans', 'Roboto', sans-serif;
@@ -8,14 +8,16 @@
 
 .title {
   margin-left: 3rem;
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 32px;
+  font-weight: 700;
   color: var(--gray-scale1);
   margin-bottom: 20px;
 }
 
 .description {
-  font-size: 20px;
+  font-family: 'Open Sans';
+  font-size: 24px;
+  font-weight: 600;
   color: var(--gray-scale1);
   margin-top: 20px;
   margin-bottom: 20px;
@@ -27,25 +29,31 @@
 }
 
 .btn-search{
+  font-family: 'Open Sans';
+  font-style: semi-bold;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18.75px;
   background: var(--primary-color);
-  color:  var(--gray-scale6);
+  color:  #FFFFFF;
   border: 1px solid ;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: bold;
   padding: 10px 20px;
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.btn-search:hover{
+  background: var(--button-hover);
+}
+
 .form-label {
   font-size: 14px;
   font-weight: 900;
   color: var(--gray-scale1);
   margin-bottom: 5px;
 }
-.input-search{
+.input-search {
   border: 1px solid var(--gray-scale3);
-  border-radius: 5px;
   font-size: 14px;
   font-weight: bold;
   padding: 10px 20px;
@@ -53,7 +61,7 @@
 }
 
 .search-cpf {
-  margin-left: 3rem;
+  margin-left: 2.3rem;
   margin-right: 3rem;
   margin-top: 20px;
   margin-bottom: 20px;
