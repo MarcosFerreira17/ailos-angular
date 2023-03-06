@@ -57,18 +57,35 @@
   <div class="search-cpf row">
     <label for="basic-url" class="form-label">CPF</label>
     <div class="input-group">
-      <input type="text" class="input-search" placeholder="000.000.000-00" />
-      <button class="btn btn-search">Consultar por CPF</button>
+      <input
+        type="text"
+        class="input-search"
+        placeholder="000.000.000-00"
+        #cpf
+      />
+      <button
+        type="button"
+        class="btn btn-search"
+        (click)="isCollapsedCPF = !isCollapsedCPF"
+        [attr.aria-expanded]="!isCollapsedCPF"
+        aria-controls="collapseBasic"
+        (click)="isValidCPF(cpf.value)"
+      >
+        Consultar por CPF
+      </button>
     </div>
+    <span *ngIf="validCPF == false" class="text-danger"> CPF inválido </span>
   </div>
-  <div class="card" *ngIf="queryCPF == !queryCPF">
+  <div *ngIf="validCPF == true" class="card" [collapse]="isCollapsedCPF">
     <div class="card-body">
       <h5 class="card-title">Situação cadastral do CPF</h5>
       <h6 class="card-subtitle mb-2 text-muted">Cosulta na Receita Federal</h6>
+      <i class="bi bi-person-fill"></i>
       <label class="card-label" for="">Nome</label>
-      <p>{{ queryCPF }}</p>
+      <p>{{ isCollapsedCPF }}</p>
+      <i class="bi bi-check-circle"></i>
       <label class="card-label" for="">CPF</label>
-      <p>{{ queryCPF }}</p>
+      <p>{{ isCollapsedCPF }}</p>
     </div>
   </div>
 </div>
