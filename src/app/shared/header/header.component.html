@@ -12,21 +12,41 @@
           </span>
         </a>
       </div>
-      <button type="button" class="btn-cred">VIACRED</button>
-
-      <div class="profile-img position-relative">
-        <a href="">
-          <img
-            src="assets/imgs/profile-pic.png"
-            class="img-fluid img-thumbnail"
-            alt="Profile picture"
-          />
-          <span
-            class="position-absolute top-100 start-50 translate-middle badge rounded-pill"
-          >
-            <i class="bi bi-gear-fill"></i>
-          </span>
-        </a>
+      <div class="btn-group" dropdown>
+        <button
+          id="button-basic"
+          dropdownToggle
+          type="button"
+          class="btn btn-cred dropdown-toggle"
+          aria-controls="dropdown-basic"
+        >
+          VIACRED<span class="caret"></span>
+        </button>
+        <ul
+          id="dropdown-basic"
+          *dropdownMenu
+          class="dropdown-menu"
+          role="menu"
+          aria-labelledby="button-basic"
+        >
+          <li role="menuitem"><a class="dropdown-item" href="#">CENTRAL</a></li>
+          <li role="menuitem">
+            <a class="dropdown-item" href="#">CREDIFOZ</a>
+          </li>
+          <li role="menuitem">
+            <a class="dropdown-item" href="#">TRANSPOCRED</a>
+          </li>
+          <li role="menuitem">
+            <a class="dropdown-item" href="#">VIACRED</a>
+          </li>
+        </ul>
+      </div>
+      <div class="profile-img">
+        <img
+          src="assets/imgs/profile-pic.png"
+          class="img-fluid img-thumbnail"
+          alt="Profile picture"
+        />
       </div>
     </div>
   </nav>

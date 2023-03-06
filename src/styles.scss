@@ -15,8 +15,8 @@
   --primary-color: #165C7D;
   --secondary-color: #FFA300;
   --complementary-color2: #009ED0;
-  --complementary-color2: #00C246;
-  --complementary-color3: #007D8A;
+  --complementary-color3: #00C246;
+  --complementary-color4: #007D8A;
   --critical-scale1: rgb(193, 48, 24);
   --critical-scale2: #FFA300;
   --critical-scale3: #FCD610;
@@ -145,3 +145,6 @@ q:after {
   content: '';
   content: none;
 }
+
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";

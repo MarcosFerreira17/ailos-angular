@@ -26,6 +26,25 @@ header {
   margin-right: 10px;
 }
 
+.profile-img{
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.dropdown-item{
+  font-size: 14px;
+  font-family: 'Open Sans', 'Roboto';
+  font-weight: 400;
+  font-style: Regular;
+  line-height: 16.41px;
+}
+
+.dropdown-item:hover{
+  background-color: var(--tonal-variations6);
+  transition: background-color 0.2s ease-in-out;
+}
+
 .btn-cred{
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
@@ -37,11 +56,11 @@ header {
   margin-left: 10px;
   margin-right: 10px;
 }
-
-.bi-gear-fill {
-  font-size: 20px;
-  color: var(--primary-color);
+.btn-cred:hover, .btn-cred:focus, .btn-cred:active, .btn-cred.active, .open > .dropdown-toggle.btn-cred {
+  background-color: var(--primary-color);
+  color: #fff;
 }
+
 .profile-img img{
   width: 40px;
   height: 40px;
@@ -49,6 +68,7 @@ header {
   border-radius: 100%;
   margin-right: 10px;
   margin-top: 20px;
+
 }
 
 .breadcrumb-item {

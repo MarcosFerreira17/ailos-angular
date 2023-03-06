@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { HomeComponent } from './components/cooperative-admission/home/home.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HomeComponent } from './components/cooperative-admission/home/home.comp
     AppRoutingModule,
     BrowserAnimationsModule,
     CollapseModule.forRoot(),
+    BsDropdownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
