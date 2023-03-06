@@ -54,7 +54,7 @@
     este cadastro futuramente.
   </p>
   <p class="description">Digite apenas os números (sem ponto e virgula)</p>
-  <div class="search-cpf row">
+  <div class="search-cpf">
     <label for="basic-url" class="form-label">CPF</label>
     <div class="input-group">
       <input
@@ -63,41 +63,74 @@
         placeholder="000.000.000-00"
         #cpf
       />
+
       <button
         type="button"
         class="btn btn-search"
         (click)="isCollapsedCPF = !isCollapsedCPF"
         [attr.aria-expanded]="!isCollapsedCPF"
         aria-controls="collapseBasic"
-        (click)="isValidCPF(cpf.value)"
+        (click)="searchCPF(cpf.value)"
       >
         Consultar por CPF
       </button>
     </div>
-    <span *ngIf="validCPF == false" class="text-danger"> CPF inválido </span>
+    <span *ngIf="validCPF === false" class="text-danger"> CPF inválido </span>
   </div>
-  <div *ngIf="validCPF == true" class="card" [collapse]="isCollapsedCPF">
-    <div class="card-body">
-      <h5 class="card-title">Situação cadastral do CPF</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Cosulta na Receita Federal</h6>
-      <i class="bi bi-person-fill"></i>
-      <label class="card-label" for="">Nome</label>
-      <p>{{ isCollapsedCPF }}</p>
-      <i class="bi bi-check-circle"></i>
-      <label class="card-label" for="">CPF</label>
-      <p>{{ isCollapsedCPF }}</p>
+  <div class="d-inline-flex row" *ngFor="let user of users">
+    <div class="col-sm-4 card-group" *ngIf="validCPF == true">
+      <div class="card" [collapse]="isCollapsedCPF">
+        <div class="card-body">
+          <h5 class="card-title">Situação cadastral do CPF</h5>
+          <span class="card-subtitle mb-2 text-muted">
+            Cosulta na Receita Federal
+          </span>
+          <div class="card-label">
+            <i class="bi bi-person-fill">
+              <label for="">Nome</label>
+            </i>
+            <p class="label-input">{{ user.name }}</p>
+          </div>
+          <div class="card-label">
+            <i class="bi bi-check-circle">
+              <label for="">CPF</label>
+            </i>
+            <p class="label-input">{{ user.status }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 card-group" *ngFor="let accounts of user.accounts">
+      <div *ngIf="validCPF == true" class="card" [collapse]="isCollapsedCPF">
+        <div class="card-body">
+          <h5 class="card-title">{{ accounts.type }}</h5>
+          <span class="card-subtitle mb-2 text-muted"
+            >Cooperativa Viacredi</span
+          >
+          <div class="card-label">
+            <i class="bi bi-credit-card"></i>
+            <label for="">Número da conta</label>
+            <p class="label-input">{{ accounts.number }}</p>
+          </div>
+          <div class="d-flex card-label">
+            <a href="" class="card-link">Duplicar conta</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <footer>
   <div class="container-fluid d-flex">
+    <button class="btn-admissao btn-lg" *ngIf="isCollapsedCPF === false">
+      Iniciar nova admissão
+    </button>
     <button
-      class="btn btn-primary"
       type="button"
       data-bs-toggle="offcanvas"
       data-bs-target="#offcanvasWithBothOptions"
       aria-controls="offcanvasWithBothOptions"
-      class="btn-tips btn-lg"
+      class="btn btn-tips btn-lg"
     >
       Dicas para abertura de conta
     </button>
@@ -121,79 +154,69 @@
         </p>
 
         <div class="form-check mt-3">
-          <li class="list-group-item">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="firstCheckbox"
-              (click)="isCollapsedFirstInput = !isCollapsedFirstInput"
-              [attr.aria-expanded]="!isCollapsedFirstInput"
-              aria-controls="collapseBasic"
-            />
-            <label class="form-check-label" id="firstCheckbox">
-              Conheça seu cooperado
-            </label>
-          </li>
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="primaryCheck"
+            firstCheckBox
+            (click)="isChecked()"
+          />
+          <label class="form-check-label" id="primaryCheck">
+            Conheça seu cooperado
+          </label>
           <ul
             class="nav-item justify-content-around"
-            id="collapseBasic"
-            [collapse]="isCollapsedFirstInput"
-            [isAnimated]="true"
+            *ngIf="firstCheckBox == 'checked'"
           >
             <li class="nav-link">O que traz você até a cooperativa?</li>
             <li class="nav-link">O que é mais importante na sua vida?</li>
             <li class="nav-link">Você tem algum sonho?</li>
           </ul>
         </div>
+
         <div class="form-check">
-          <li class="list-group-item">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="secondCheckbox"
-              (click)="isCollapsedSecondInput = !isCollapsedSecondInput"
-              [attr.aria-expanded]="!isCollapsedSecondInput"
-              aria-controls="collapseBasic"
-            />
-            <label class="form-check-label" id="secondCheckbox">
-              Fale sobre a Cooperativa
-            </label>
-          </li>
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="secondaryCheck"
+            secondCheckBox
+            (click)="isChecked()"
+          />
+          <label class="form-check-label" id="secondaryCheck">
+            Fale sobre a Cooperativa
+          </label>
+
           <ul
             class="nav-item justify-content-around"
-            id="collapseBasic"
-            [collapse]="isCollapsedSecondInput"
-            [isAnimated]="true"
+            *ngIf="secondCheckBox == 'checked'"
           >
             <li class="nav-link">
               Modelo de Negócio: direito a voto, transpaência na gestão,
               PROGRID, retorno das sobreas, taxas atrativas;
             </li>
             <li class="nav-link">
-              Rde de Atendimento: App, Conta Online, SAC, Cixas Eletrônicos
+              Rede de Atendimento: App, Conta Online, SAC, Cixas Eletrônicos
               (compartilhados entre as cooperativas), Postos de atendimento
             </li>
           </ul>
         </div>
+
         <div class="form-check">
-          <li class="list-group-item">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="thirdCheckbox"
-              (click)="isCollapsedThirdInput = !isCollapsedThirdInput"
-              [attr.aria-expanded]="!isCollapsedThirdInput"
-              aria-controls="collapseBasic"
-            />
-            <label class="form-check-label" for="thirdCheckbox">
-              Documentos e comprovações necessárias
-            </label>
-          </li>
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="thirdCheck"
+            thirdCheckBox
+            (click)="isChecked()"
+          />
+          <label class="form-check-label" for="thirdCheck">
+            Documentos e comprovações necessárias
+          </label>
+
           <ul
             class="nav-item justify-content-around"
-            id="collapseBasic"
-            [collapse]="isCollapsedThirdInput"
-            [isAnimated]="true"
+            *ngIf="thirdCheckBox == 'checked'"
           >
             <li class="nav-link">CPF regular na Receita Federal;</li>
             <li class="nav-link">
@@ -204,6 +227,7 @@
             <li class="nav-link">Comprovante de renda.</li>
           </ul>
         </div>
+
         <button
           type="button"
           data-bs-toggle="offcanvas"

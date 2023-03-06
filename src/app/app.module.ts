@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { HeaderComponent } from './shared/header/header.component';
-import { HomeComponent } from './cooperative-admission/home/home.component';
+import { HomeComponent } from './components/cooperative-admission/home/home.component';
 
 @NgModule({
   declarations: [
